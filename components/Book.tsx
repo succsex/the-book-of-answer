@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import InnerWrapper from "components/Layout";
-import Cover from 'components/Cover'
+import Cover from "components/Cover";
 
 const Book = styled.div`
   .book {
     position: relative;
-    width: 160px;
-    height: 220px;
+    width: 320px;
+    height: 440px;
     -webkit-perspective: 1000px;
-    -moz-perspective: 1000px;
+    -moz-perspective: 1000px; */
     perspective: 1000px;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
@@ -471,7 +471,6 @@ const Book = styled.div`
     -moz-transition-duration: 1.2s;
     transition-duration: 1.2s;
   }
-
 
   /* Media Queries */
   @media screen and (max-width: 37.8125em) {

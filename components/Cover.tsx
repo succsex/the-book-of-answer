@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Cover = styled.li`
   h1 {
-    font-family: "Righteous", cursive;
+    font-family: "Quintessential", cursive;
     text-align: center;
     font-size: 3rem;
   }

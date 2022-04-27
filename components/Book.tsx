@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Layout from "components/Layout";
+import InnerWrapper from "components/Layout";
+import Cover from 'components/Cover'
 
 const Book = styled.div`
   .book {
@@ -471,140 +472,6 @@ const Book = styled.div`
     transition-duration: 1.2s;
   }
 
-  /*
-          6. Bonus
-        */
-
-  /* cover CSS */
-
-  .coverDesign {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    overflow: hidden;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-
-  .coverDesign::after {
-    background-image: -webkit-linear-gradient(
-      -135deg,
-      rgba(255, 255, 255, 0.45) 0%,
-      transparent 100%
-    );
-    background-image: -moz-linear-gradient(
-      -135deg,
-      rgba(255, 255, 255, 0.45) 0%,
-      transparent 100%
-    );
-    background-image: linear-gradient(
-      -135deg,
-      rgba(255, 255, 255, 0.45) 0%,
-      transparent 100%
-    );
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
-
-  .coverDesign h1 {
-    color: #fff;
-    font-size: 2.2em;
-    letter-spacing: 0.05em;
-    text-align: center;
-    margin: 54% 0 0 0;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.1);
-  }
-
-  .coverDesign p {
-    color: #f8f8f8;
-    font-size: 1em;
-    text-align: center;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.1);
-  }
-
-  .yellow {
-    background-color: #f1c40f;
-    background-image: -webkit-linear-gradient(top, #f1c40f 58%, #e7ba07 0%);
-    background-image: -moz-linear-gradient(top, #f1c40f 58%, #e7ba07 0%);
-    background-image: linear-gradient(top, #f1c40f 58%, #e7ba07 0%);
-  }
-
-  .blue {
-    background-color: #3498db;
-    background-image: -webkit-linear-gradient(top, #3498db 58%, #2a90d4 0%);
-    background-image: -moz-linear-gradient(top, #3498db 58%, #2a90d4 0%);
-    background-image: linear-gradient(top, #3498db 58%, #2a90d4 0%);
-  }
-
-  .grey {
-    background-color: #f8e9d1;
-    background-image: -webkit-linear-gradient(top, #f8e9d1 58%, #e7d5b7 0%);
-    background-image: -moz-linear-gradient(top, #f8e9d1 58%, #e7d5b7 0%);
-    background-image: linear-gradient(top, #f8e9d1 58%, #e7d5b7 0%);
-  }
-
-  /* Basic ribbon */
-
-  .ribbon {
-    color: #fff;
-    display: block;
-    font-size: 0.7em;
-    position: absolute;
-    top: 11px;
-    right: 1px;
-    width: 40px;
-    height: 20px;
-    line-height: 20px;
-    letter-spacing: 0.15em;
-    text-align: center;
-    -webkit-transform: rotateZ(45deg) translateZ(1px);
-    -moz-transform: rotateZ(45deg) translateZ(1px);
-    transform: rotateZ(45deg) translateZ(1px);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
-    z-index: 10;
-    &.new {
-      background: #63c930;
-      &:before,
-      &:after {
-        border-bottom: 20px solid #63c930;
-      }
-    }
-    &.bestseller {
-      background: #c0392b;
-      &:before,
-      &:after {
-        border-bottom: 20px solid #c0392b;
-      }
-    }
-  }
-
-  .ribbon::before,
-  .ribbon::after {
-    position: absolute;
-    top: -20px;
-    width: 0;
-    height: 0;
-
-    border-top: 20px solid transparent;
-  }
-
-  .ribbon::before {
-    left: -20px;
-    border-left: 20px solid transparent;
-  }
-
-  .ribbon::after {
-    right: -20px;
-    border-right: 20px solid transparent;
-  }
 
   /* Media Queries */
   @media screen and (max-width: 37.8125em) {
@@ -633,13 +500,11 @@ const Book = styled.div`
 
 export default function StyledBook() {
   return (
-    <Layout>
+    <InnerWrapper>
       <Book>
         <div className="book">
           <ul className="hardcover_front">
-            <li>
-              <span className="ribbon bestseller">Nº1</span>
-            </li>
+            <Cover />
             <li></li>
           </ul>
           <ul className="page">
@@ -663,6 +528,6 @@ export default function StyledBook() {
           </ul>
         </div>
       </Book>
-    </Layout>
+    </InnerWrapper>
   );
 }

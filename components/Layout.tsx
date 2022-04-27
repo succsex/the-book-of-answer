@@ -1,9 +1,23 @@
 import styled from "styled-components";
 
-const Layout = styled.div`
+const Wrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-export default Layout;
+const InnerWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export default ({ children }) => {
+  return (
+    <Wrapper>
+      <InnerWrapper>{children}</InnerWrapper>
+    </Wrapper>
+  );
+};
